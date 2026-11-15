@@ -1,0 +1,7 @@
+# Prevent direct HTTP access to helper code, SQL and local configuration.
+Options -Indexes
+<FilesMatch "(^\.|\.sql$|^seed-demo\.php$)">
+    Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteRule ^(?:integration|includes)(?:/|$) - [F,L]

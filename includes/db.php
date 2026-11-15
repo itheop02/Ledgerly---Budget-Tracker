@@ -4,10 +4,10 @@
  * Update the four constants below to match your local MySQL server.
  */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'ledgerly');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', getenv('LEDGERLY_DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('LEDGERLY_DB_NAME') ?: 'ledgerly');
+define('DB_USER', getenv('LEDGERLY_DB_USER') ?: 'root');
+define('DB_PASS', getenv('LEDGERLY_DB_PASS') ?: '');
 
 try {
     $pdo = new PDO(

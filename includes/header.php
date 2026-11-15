@@ -34,6 +34,9 @@ $activePage = $activePage ?? '';
     <a class="navbar-brand" href="<?= $root ?>index.php">
       <span class="brand-mark" aria-hidden="true"></span>Ledgerly
     </a>
+    <?php if (is_logged_in()): ?>
+      <a href="<?= $root ?>gdpr.php" class="btn btn-outline-ink btn-sm" data-gdpr-entry="header">Privacy checks</a>
+    <?php endif; ?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
             aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
       <span class="navbar-toggler-icon"></span>
